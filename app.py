@@ -12,6 +12,10 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
 
+# Create the tables if they do not exist
+with app.app_context():
+    db.create_all()
+
 @app.route("/")
 def home():
     return "Hello, CI/CD with Docker & GitHub Actions!"
@@ -27,8 +31,6 @@ def add_user():
 def get_users():
     users = User.query.all()
     return "<br>".join([f"{user.id}: {user.name}" for user in users])
-
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
