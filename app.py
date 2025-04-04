@@ -16,6 +16,19 @@ class User(db.Model):
 def home():
     return "Hello, CI/CD with Docker & GitHub Actions!"
 
+@app.route("/add-user")
+def add_user():
+    new_user = User(name="Talha")
+    db.session.add(new_user)
+    db.session.commit()
+    return f"Added user {new_user.name} with ID {new_user.id}"
+
+@app.route("/users")
+def get_users():
+    users = User.query.all()
+    return "<br>".join([f"{user.id}: {user.name}" for user in users])
+
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
