@@ -1,6 +1,6 @@
 
 
- markdown
+ Markdown
  Flask CI/CD App with Docker, PostgreSQL, and Render Deployment
 
 This project is a simple Flask application demonstrating CI/CD, Dockerization, and cloud deployment using Render. It connects to a PostgreSQL database, adds and retrieves users, and automates deployment with GitHub Actions.
