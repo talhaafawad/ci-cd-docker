@@ -17,17 +17,6 @@ This project is a simple Flask application demonstrating CI/CD, Dockerization, a
 
 
 
- Project Structure
-
-
-├── app.py              # Flask app with routes
-├── Dockerfile          # Docker instructions
-├── requirements.txt    # Python dependencies
-├── .github/workflows
-│   └── main.yml        # GitHub Actions workflow
-└── README.md           # Project documentation
-
-
  Features
 
 - Add a user (`/add-user`)
